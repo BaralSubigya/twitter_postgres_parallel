@@ -2,9 +2,9 @@
 
 |     | sequential | parallel |
 | --- | ---------- | -------- |
-| normalized (unbatched) | ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_normalized_sequential/badge.svg) | ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_normalized_parallel/badge.svg) |
-| normalized (batched) | ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_normalizedbatch_sequential/badge.svg) |  ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_normalizedbatch_parallel/badge.svg) |
-| denormalized | ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_denormalized_sequential/badge.svg) | ![](https://github.com/mikeizbicki/twitter_postgres_parallel/workflows/tests_denormalized_parallel/badge.svg) |
+| normalized (unbatched) | ![](https://github.com/BaralSubigya/twitter_postgres_parallel/workflows/tests_normalized_sequential/badge.svg) | ![](https://github.com/BaralSubigya/twitter_postgres_parallel/workflows/tests_normalized_parallel/badge.svg) |
+| normalized (batched) | ![](https://github.com/BaralSubigya/twitter_postgres_parallel/workflows/tests_normalizedbatch_sequential/badge.svg) |  ![](https://github.com/BaralSubigya/twitter_postgres_parallel/workflows/tests_normalizedbatch_parallel/badge.svg) |
+| denormalized | ![](https://github.com/BaralSubigya/twitter_postgres_parallel/workflows/tests_denormalized_sequential/badge.svg) | ![](https://github.com/BaralSubigya/twitter_postgres_parallel/workflows/tests_denormalized_parallel/badge.svg) |
 
 In this assignment, you will learn how to load data into postgres much faster using two techniques:
 1. batch loading (i.e. running the INSERT command on more than one row at a time)
@@ -26,7 +26,7 @@ You will also get practice doing the type of medium sized refactor on code that 
     1. recall that ports must be >1024 and not in use by any other user on the system
     1. verify that you have modified the file correctly by running
        ```
-       $ docker-compose up
+       $ docker compose up
        ```
        with no errors
 
@@ -134,9 +134,9 @@ Once you've done those two steps, verify that the test cases pass by uploading t
 
 Once you've verified that the test cases pass, on the lambda server, you should run the following commands to load the data.
 ```
-$ docker-compose down
+$ docker compose down
 $ docker volume prune
-$ docker-compose up -d
+$ docker compose up -d
 $ sh load_tweets_sequential.sh
 ```
 The `load_tweets_sequential.sh` file reports the runtime of loading data into each of the three databases.
